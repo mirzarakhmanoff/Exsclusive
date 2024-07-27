@@ -1,0 +1,191 @@
+.nav {
+  margin: auto;
+  max-width: 1270px;
+
+  .navbar {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1170px;
+    margin: auto;
+    gap: 80px;
+    padding-block: 40px;
+    margin: auto;
+    @media screen and (max-width: 415px) {
+      flex-direction: column;
+      margin: 0;
+      padding: 10px;
+      gap: 0;
+    }
+    .logo {
+      a {
+        font-family: Inter;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0.03em;
+        text-align: left;
+        text-decoration: none;
+        color: #000;
+      }
+    }
+    .nav-items {
+      display: flex;
+      gap: 70px;
+
+      @media screen and (max-width: 1000px) {
+        display: none;
+      }
+      a {
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: center;
+        text-decoration: none;
+        color: #000;
+        transition: 1s;
+        &:hover {
+          border-bottom: 1px solid;
+        }
+      }
+    }
+
+    .nav-search {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      @media screen and (max-width: 500px) {
+        .nav__images {
+          display: none;
+        }
+      }
+
+      img {
+        cursor: pointer;
+      }
+      .nav-input {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+        background: #f5f5f5;
+        width: 211px;
+
+        input {
+          border: none;
+          outline: none;
+          cursor: pointer;
+          background: #f5f5f5;
+          width: 100%;
+        }
+        i {
+          font-size: 1rem;
+          margin: 0;
+          cursor: pointer;
+        }
+        &:focus-within {
+          outline: 2px solid #3498db;
+        }
+      }
+    }
+  }
+  .topNavbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    margin: auto;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    gap: 50px;
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      text-align: left;
+      color: #fafafa;
+      letter-spacing: 1px;
+      @media screen and (max-width: 920px) {
+        display: none;
+      }
+    }
+    a {
+      font-family: Poppins;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 24px;
+      text-align: center;
+      color: #fafafa;
+    }
+    select {
+      background: transparent;
+      color: #fafafa;
+      border: none;
+      margin-left: 100px;
+    }
+  }
+}
+
+.hidden__navbar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Скрываем панель за экраном */
+  width: 250px;
+  height: 100vh; /* Полная высота экрана */
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.hidden__navbar.active {
+  left: 0; /* Показываем панель при добавлении класса active */
+}
+
+.hidden__navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hidden__navbar ul li {
+  margin: 0;
+}
+
+.hidden__navbar ul li a {
+  display: block;
+  padding: 14px 20px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #444; /* Разделение пунктов меню */
+}
+
+.hidden__navbar ul li a:hover {
+  background-color: #575757;
+}
+
+.navbar-toggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.toggle__btn {
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  @media screen and (max-width: 500px) {
+    display: block;
+  }
+}

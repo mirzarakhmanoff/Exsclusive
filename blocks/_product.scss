@@ -1,0 +1,265 @@
+.product {
+  display: flex;
+  margin: auto;
+  width: max-content;
+  margin-bottom: 60px;
+  @media screen and (max-width: 930px) {
+    flex-direction: column;
+    .product__items {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product__images {
+      display: none;
+    }
+  }
+  .product__items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  gap: 50px;
+  margin-top: 80px;
+  .product__images {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    img {
+      width: 100px;
+    }
+  }
+
+  .product__right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .product__hero {
+      width: 300px;
+      height: 200px;
+      img {
+        width: 100px;
+      }
+    }
+    .product__info {
+      h3 {
+        font-family: Inter;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: 0.03em;
+        text-align: left;
+        color: #000;
+      }
+    }
+    .product__rating {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      align-items: center;
+      i {
+        color: #ffad33;
+      }
+      p {
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        text-align: left;
+        color: #000;
+      }
+      span {
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        text-align: left;
+        color: #00ff66;
+      }
+    }
+    .product__price {
+      span {
+        font-family: Inter;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.03em;
+        text-align: left;
+        color: #000;
+      }
+    }
+    .product__desc {
+      p {
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        text-align: left;
+        color: #000;
+        max-width: 420px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+  }
+}
+.product__size {
+  span {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    color: #000;
+  }
+  a {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    text-align: left;
+    color: #000;
+    margin-left: 10px;
+    padding: 10px 15px;
+    border: solid;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: #db4444;
+      color: #fff;
+    }
+  }
+}
+
+.product__btns {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  a {
+    padding: 8px 25px;
+    border: solid;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    color: #000;
+    background-color: #ddd;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.5s;
+    &:hover {
+      background-color: #db4444;
+      color: #fff;
+    }
+  }
+  i {
+    cursor: pointer;
+    padding: 8px;
+    border: 1px solid;
+    border-radius: 10px;
+    &:hover {
+      background-color: #db4444;
+    }
+  }
+
+  .kolvo {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: solid;
+    border-radius: 10px;
+    overflow: hidden;
+    button {
+      width: 40%;
+      border: none;
+      background-color: #ddd;
+      padding: 5px;
+      height: 100%;
+      transition: 0.5s;
+
+      &:hover {
+        background-color: #db4444;
+        color: #fff;
+      }
+    }
+  }
+}
+.delivery {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+}
+.delivery__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+  padding-block: 20px;
+}
+
+.hidden__navbar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Скрываем панель за экраном */
+  width: 250px;
+  height: 100vh; /* Полная высота экрана */
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.hidden__navbar.active {
+  left: 0; /* Показываем панель при добавлении класса active */
+}
+
+.hidden__navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hidden__navbar ul li {
+  margin: 0;
+}
+
+.hidden__navbar ul li a {
+  display: block;
+  padding: 14px 20px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #444; /* Разделение пунктов меню */
+}
+
+.hidden__navbar ul li a:hover {
+  background-color: #575757;
+}
+
+.navbar-toggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.toggle__btn {
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  @media screen and (max-width: 500px) {
+    display: block;
+  }
+}
